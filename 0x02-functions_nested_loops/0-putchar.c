@@ -1,26 +1,24 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * main - Prints numbers between 00 to 99.
+ * main - prints Putchar
  *
- * Return: Always 0 (Success)
+ * Description: prints _putchar
+ *
+ * Return: 0 (Success)
  */
-void trim(char *ope);
+
 int main(void)
 {
-    char ope[] = "_putchar\n";
-	printf("%s", ope); 
-    trim(ope); 
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+
 	return (0);
-}
-void trim(char *ope)
-{
-    int i = strlen(ope)-1;
-    while(i > 0)
-    {
-        if (ope[i] == ' ' || '\n')i -- ;
-        else break;
-    }
-    ope[i + 1] = '\0';
 }

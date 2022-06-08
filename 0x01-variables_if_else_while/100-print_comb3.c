@@ -1,31 +1,37 @@
 #include <stdio.h>
 
 /**
- * main - Program entry point
- * Description: Print all possible different combinations of two digits
- * Return: 0
+ * main - Prints numbers between 00 to 89.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int x;
-	int y;
+	int i, e;
 
-	for (x = 0; x < 9; x++)
+	i = 48;
+	e = 48;
+
+	while (e < 58)
 	{
-		for (y = x + 1; y < 10; y++)
+		i = 48;
+		while (i < 58)
 		{
-			putchar((x % 10) + '0');
-			putchar((y % 10) + '0');
-
-			if (x == 8 && y == 9)
-				continue;
-
-			putchar(',');
-			putchar(' ');
+			if (e != i && e < i)
+			{
+				putchar(e);
+				putchar(i);
+				if (i == 57 && e == 56)
+				{
+					break;
+				}
+				putchar(',');
+				putchar(' ');
+			}
+			i++;
 		}
+		e++;
 	}
-
 	putchar('\n');
-
 	return (0);
 }

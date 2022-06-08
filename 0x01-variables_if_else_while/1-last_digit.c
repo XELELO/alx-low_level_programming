@@ -1,28 +1,30 @@
-#include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
 
 /**
- * main - Program entry point
- * Description: Prints a random num and whether it's greater than 5,
- * equal to 0 or less than 6 and not equal to 0
- * Return: 0
+ * main - Determines either greater than 5, is less than 6, or is 0
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n;
-	int x;
+	int n, l;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	x = n % 10;
-
-	if (x > 5)
-		printf("Last digit of %i is %i and is greater than 5\n", n, x);
-	else if (x == 0)
-		printf("Last digit of %i is %i and is 0\n", n, x);
-	else if (x < 6)
-		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, x);
-
+	l = n % 10;
+	if (l > 5)
+	{
+		printf("Last digit of %d is %d and is greater than 5\n", n, l);
+	}
+	else if (l == 0)
+	{
+		printf("Last digit of %d is %d and is 0\n", n, l);
+	}
+	else
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, l);
+	}
 	return (0);
 }
