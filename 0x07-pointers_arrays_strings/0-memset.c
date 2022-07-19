@@ -1,19 +1,23 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <string.h>
 /**
-* _memset -> this memory set function
-* @s: string
-* @b: a character
-* @n: an integer
-*Return: a string
-
-*char *-memset(char*s, char b, unsigned int n)
+ *_memset - this function sets a value to a memory location
+ *@value: this parameter is the dest param
+ *@b:this character is to be assigned to the
+ *@n: this parameter is the length value
+ *Return:value
+ */
+char *_memset(char *value, char b, unsigned int n)
 {
-unsigned int a;
+	int i;
 
-for (a=0; a < n; a++)
-s[a] =b;
-
-return (s);
-
+	i = 0;
+	while (i < n)
+	{
+		value[i] = b;
+		i++;
+	}
+	printf("%s\n", value);
+	return (value);
 }

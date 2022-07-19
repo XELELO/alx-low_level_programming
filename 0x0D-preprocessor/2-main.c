@@ -1,11 +1,14 @@
-#include <stdio.h>                                                                         
-/**                                                                                        
- * main > prints the name of the file program was compiled from                            
- * Return: Always 0                                                                        
- */                                                                                        
-int main(void)                                                                             
-{                                                                                          
-        printf("%s\n", _FILE_);                                                            
-        return (0);                                                                        
-}                                                                                          
-                               
+#include <bits/types/__FILE.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/**
+ *main - this function prints it’s name followed by a new line
+ *
+ *Return: 0 always success
+ */
+int main(void)
+{
+	printf("%s\n", __FILE__);
+	return (0);
+}

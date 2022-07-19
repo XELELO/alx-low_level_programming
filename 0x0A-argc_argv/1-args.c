@@ -1,12 +1,18 @@
 #include <stdio.h>
+#include <sys/cdefs.h>
+
 /**
- * main - prints the number of arguments passed into it.
- * @argc: number of command line arguments.
- * @argv: array that contains the program command line arguments.
- * Return: 0 - success.
+ * main - Entry point
+ *@argc: this parameter is the argument noo
+ *@argv: this parameter is the argument vector
+ * Return: Always 0 (Success)
  */
-int main(int argc, char *argv[] __attribute__((unused)))
+int main(int argc, char *argv[])
 {
-	printf("%d\n", argc - 1);
+	__attribute__((unused)) char *mo = argv[0];
+	int argno;
+
+	argno = argc - 1;
+	printf("%d\n", argno);
 	return (0);
 }

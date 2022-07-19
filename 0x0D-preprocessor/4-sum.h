@@ -1,4 +1,4 @@
-#ifndef SUM-MACRO                                                                          
-#define SUM-MACRO                                                                          
-#define SUM(A, B) ((A) +(B))                                                               
-#endif      
+#ifndef SUM_MACRO
+#define SUM_MACRO
+#define SUM(A, B) ((A) + (B))
+#endif

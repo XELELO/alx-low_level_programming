@@ -1,2 +1,13 @@
-# C - argc, argv
-Project done during **Full Stack Software Engineering** studies at [**Alx School**](https://www.alxafrica.com/). It aims to learn about how to use arguments passed to a program in C language.
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	return (0);
+}
+

@@ -1,4 +1,4 @@
-#ifndef FUNCTION_LIKE-MACRO.H                                                              
-#define FUNCTION_LIKE_MACRO.H                                                              
-#define ABS(x) ((x <0) ? (x) * (-1) : (x))                                                 
+#ifndef NOBS
+#define NOBS
+#define ABS(X) ((X) >= 0 ? (X) : (X) * -1)
 #endif
