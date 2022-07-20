@@ -1,16 +1,17 @@
 #include "lists.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 /**
- *print_listint - this function transverses a linked list
- *@h: this is the struct to be passed to the function
- *Return: i
+ * free_listint - free a `listint_t` list
+ * @head: head of linked list
  */
-void fre(listint_t *head)
+void free_listint(listint_t *head)
 {
-	listint_t *y = head;
-	y->next = NULL;
-	
+	listint_t *hold;
+
+	while (head != NULL)
+	{
+		hold = head;
+		head = head->next;
+		free(hold);
+	}
 }

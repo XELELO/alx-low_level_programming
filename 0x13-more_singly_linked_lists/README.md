@@ -1,2 +1,1 @@
-# More singly linked lists
-the structure has been properly made
+# 0x12. C - More singly linked lists

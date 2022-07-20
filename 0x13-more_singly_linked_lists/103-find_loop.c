@@ -1,58 +1,38 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <string.h>
-
-void detect_remove_loop(listint_t **head);
-listint_t* newnode(int key)
+#include <stdio.h>
+/**
+ * find_listint_loop - find the loop in a linked list
+ * @head: head of linked list
+ * Description: Not allowed to use malloc, free or arrays.
+ * Can only declare a max of 2 variables.
+ * Return: Address of node where loop starts, or NULL if no loop found.
+ */
+listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *temp = (listint_t *)malloc(sizeof(listint_t));
-	temp->n = key;
-	temp->next = NULL;
-	return temp;	
-}
+	listint_t *currents, *currentf;
 
-void detect_remove_loop(listint_t **head)
-{
-	if(*head == NULL || (*head)->next == NULL)
-	{
-		return;
-	}
-	listint_t *slow = (*head);
-	listint_t *fast =(*head);
-	while (fast && fast->next)
-	{
-		slow = slow->next;
-		fast = fast->next;
-		break;
-	
-		if (slow == fast)
-		{
-			slow = (*head);
-			fast = fast->next->next;
-			
-		}
-	}
-	/**/
-	if (slow == fast)
-	{
-		slow = (*head);
-		if (slow == fast)
-		{
-			while (fast->next != slow)
-			{
-				fast = fast->next;
-			}
-			
-		}
+	if (head == NULL)
+		return (NULL);
+
+	currents = currentf = head;
+	do {
+		if (currents->next)
+			currents = currents->next;
 		else
-		{
-			while (slow->next)
-			{
-				slow = slow->next;
-				fast = fast->next;
-					
-			}
-		}
-		fast->next = NULL;
+			return (NULL);
+
+		if (currentf->next->next)
+			currentf = currentf->next->next;
+		else
+			return (NULL);
+	} while (currentf != currents);
+
+	currents = head;
+	while (currentf != currents)
+	{
+		currentf = currentf->next;
+		currents = currents->next;
 	}
+
+	return (currents);
 }
