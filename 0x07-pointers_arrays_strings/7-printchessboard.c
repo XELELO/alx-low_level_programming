@@ -1,17 +1,33 @@
 #include "main.h"
-#include <string.h>
+
 /**
- *_memseet - this function sets a value to a memory location
- *Return: 0 always
  *
- */
+ *  * print_chessboard - prints the chessboard
+ *
+ *   *
+ *
+ *    * @a: two dimension array to print
+ *
+ *     */
 
-void print_chessboard(char(*a)[8])
+void print_chessboard(char (*a)[8])
+
 {
-	
 
-	for (size_t i = 0; i < st/* code */
-	
-	}
-	
+		int x = 0, y = 0;
+
+
+
+			for (x = 0; x < 8; x++)
+
+					{
+
+								for (y = 0; y < 8; y++)
+
+												_putchar(a[x][y]);
+
+										_putchar(10);
+
+											}
+
 }
