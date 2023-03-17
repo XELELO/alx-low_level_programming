@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
+#include <errno.h>
+#include <string.h>
 /**
  *malloc_checked - this functions asigns the value of the location
  *given to it in a malloc functions
@@ -9,12 +10,11 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	void *s;
-
-	s = malloc(b);
-	if (s == NULL)
+	void *ptr = malloc(b);
+	if (ptr == NULL)
 	{
+		fprintf(stderr, "Error: malloc failed. %s\n", strerror(errno));
 		exit(98);
 	}
-	return (s);
+	return (ptr);
 }
